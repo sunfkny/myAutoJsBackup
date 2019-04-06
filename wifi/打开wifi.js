@@ -1,0 +1,1 @@
+shell("svc wifi enable", true);

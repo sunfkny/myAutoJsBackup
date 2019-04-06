@@ -1,0 +1,1 @@
+shell("am start -n com.taobao.taobao/com.taobao.taobao.scancode.gateway.activity.ScancodeGatewayActivity", true);

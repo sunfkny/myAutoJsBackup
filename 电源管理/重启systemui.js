@@ -1,0 +1,1 @@
+shell("pkill -f com.android.systemui",true);

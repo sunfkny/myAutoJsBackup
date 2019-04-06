@@ -1,0 +1,1 @@
+shell("am start -n com.tencent.mm/com.tencent.mm.plugin.shakelucky.ui.ShakeLuckyUI", true);

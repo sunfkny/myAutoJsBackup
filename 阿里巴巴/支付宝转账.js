@@ -1,0 +1,1 @@
+shell("am start -n com.eg.android.AlipayGphone/com.alipay.mobile.transferapp.ui.TransferHomeActivity_", true);

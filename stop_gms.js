@@ -1,0 +1,1 @@
+shell("am force-stop com.google.android.gms",true);

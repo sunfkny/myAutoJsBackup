@@ -1,0 +1,1 @@
+shell("am start -n com.tencent.token/com.tencent.qbardemo.MainActivity", true);

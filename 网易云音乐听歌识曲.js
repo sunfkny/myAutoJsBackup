@@ -1,0 +1,1 @@
+shell("am start -n com.netease.cloudmusic/.activity.IdentifyActivity", true);

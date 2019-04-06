@@ -1,0 +1,1 @@
+app.viewFile("/sdcard/documents/web/index.html");

@@ -1,0 +1,1 @@
+shell("am start -n com.chinatelecom.bestpayclient/com.chinatelecom.bestpayclient.ui.activity.PaymentCodeActivity", true);

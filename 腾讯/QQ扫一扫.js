@@ -1,0 +1,1 @@
+shell("am start -n com.tencent.mobileqq/com.tencent.biz.qrcode.activity.ScannerActivity", true);

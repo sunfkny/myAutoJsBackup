@@ -1,0 +1,1 @@
+shell("am start -n com.eg.android.AlipayGphone/com.alipay.android.wallet.newyear.activity.MonkeyYearActivity", true);

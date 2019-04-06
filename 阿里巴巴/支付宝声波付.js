@@ -1,0 +1,1 @@
+shell("com.eg.android.AlipayGphone/com.alipay.mobile.onsitepay9.payer.OspTabHostActivity", true);
