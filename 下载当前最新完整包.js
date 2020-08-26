@@ -20,7 +20,7 @@ if (!new_version_str) {
         //var changelog = new_version.LatestRom.changelog
 
         n = filename.split("_")
-        if (n.length == 5 && n[0] == "miui" && n[4].slice(-3) == "zip" /*&&n[1]=="MIMIX2S"*/ ) {
+        if (n.length == 5 && n[0] == "miui" && n[4].slice(-3) == "zip") {
             url = "http://bigota.d.miui.com/" + n[2] + "/" + filename
             var i = app.intent({
                 action: "VIEW",
