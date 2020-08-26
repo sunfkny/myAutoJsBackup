@@ -32,7 +32,7 @@ if (!new_version_str) {
             toastLog("更新包链接不合法")
         }
     } catch (e) {
-        toastLog(e)
+        toastLog("解析内容出错"+e)
     }
 
 }
