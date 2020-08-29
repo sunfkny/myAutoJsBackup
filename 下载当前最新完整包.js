@@ -1,12 +1,42 @@
-filePath = "/data/data/com.android.updater/shared_prefs/version_json.xml"
-version_json_str = files.read(filePath)
-new_version_str = version_json_str.match(/<string name="new_version">.*?<\/string>/)
+/*
+var useTmpFile = 1
+// 默认为打开临时文件，否则偶现无法读取
+var filePath = "/data/data/com.android.updater/shared_prefs/version_json.xml"
+
+if (useTmpFile) {
+    tmpPath = "/storage/emulated/0/version_json.xml"
+    shell("cp " + filePath + " " + tmpPath, true)
+    var version_json_str = files.read(tmpPath)
+    shell("rm -f " + tmpPath)
+} else {
+    var version_json_str = files.read(filePath)
+}
+*/
+
+
+// 默认使用直接读取，出错再使用临时文件
+var filePath = "/data/data/com.android.updater/shared_prefs/version_json.xml"
+var tmpPath = "/storage/emulated/0/version_json.xml"
+var version_json_str = ""
+
+try {
+    version_json_str = files.read(filePath)
+} catch (e) {
+    log(e)
+    shell("cp " + filePath + " " + tmpPath, true)
+    version_json_str = files.read(tmpPath)
+    shell("rm -f " + tmpPath)
+}
+
+
+
+var new_version_str = version_json_str.match(/<string name="new_version">.*?<\/string>/)
 
 if (!new_version_str) {
     toastLog("没有匹配到更新包")
 } else {
     try {
-        new_version = JSON.parse(new_version_str[0].replace('<string name="new_version">', '').replace('</string>', '').replace(/&quot;/gi, '"'))
+        var new_version = JSON.parse(new_version_str[0].replace('<string name="new_version">', '').replace('</string>', '').replace(/&quot;/gi, '"'))
 
         /*
         var path = "/storage/emulated/0/new_version.txt";
@@ -32,7 +62,7 @@ if (!new_version_str) {
             toastLog("更新包链接不合法")
         }
     } catch (e) {
-        toastLog("解析内容出错"+e)
+        toastLog("解析内容出错" + e)
     }
 
 }
